@@ -1,6 +1,8 @@
 # 電商平台 UI
 
-![Logo](./assets/Hipster_HeroLogo.svg)
+[//]: # (![Logo]&#40;./assets/Hipster_HeroLogo.svg&#41;)
+<img src="./assets/Hipster_HeroLogo.svg" width="200" height="200" alt="Logo">
+
 
 ## 📖 介紹
 
