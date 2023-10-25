@@ -1,10 +1,12 @@
-# 電商平台 UI
-
-[//]: # (![Logo]&#40;./assets/Hipster_HeroLogo.svg&#41;)
-<img src="./assets/Hipster_HeroLogo.svg" width="200" height="200" alt="Logo">
+<div style="display: flex; align-items: center;">
+<img src="./assets/Hipster_HeroLogo.svg" width="100" height="100" alt="Logo" style="margin-right: 20px;">
+<h1>電商平台</h1>
+</div>
 
 
 ## 📖 介紹
+
+
 
 ## ✨ 功能
 
