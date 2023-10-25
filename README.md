@@ -1,17 +1,25 @@
-# ecom_platform
+# 電商平台 UI
 
-A new Flutter project.
+![Logo](./assets/Hipster_HeroLogo.svg)
 
-## Getting Started
+## 📖 介紹
 
-This project is a starting point for a Flutter application.
+## ✨ 功能
 
-A few resources to get you started if this is your first Flutter project:
+### 用戶認證
+- 支持 Facebook、Google 和 LINE 的第三方登入。
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### 商品瀏覽
+- 用戶可以輕鬆瀏覽商品，查看商品詳情和價格。
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# ecom_platform
+### 購物車
+- 加入/移除購物車功能，以及查看購物車中的商品。
+
+### 付款
+- 金流主要是通過綠界技術來完成，保證交易的安全和便捷。
+
+### 訂單管理
+- 用戶可以查看和管理他們的訂單。
+
+### 評價系統
+- 用戶可以為購買的商品留下評價和評論。
