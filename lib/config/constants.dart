@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 const appBarPaddingTop = 60.0;
 const appBarHeight = 220.0;
 const logoPaddingLeft = 200.0;

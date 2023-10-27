@@ -4,6 +4,13 @@ import 'package:flutter/material.dart';
 
 const TextStyle kTextStyle12 = TextStyle(fontSize: 12);
 const TextStyle kHintTextStyle = TextStyle(color: Colors.grey);
+const customTabLabelPadding = EdgeInsets.symmetric(
+    horizontal: 12.0); // Adjust horizontal padding to your preference
+const customTabTextStyle = TextStyle(
+  fontSize: 12.0, // Adjust font size to your preference
+  color: Colors.black, // Adjust text color to your preference
+); // Adjust font size to your preference
+const customTabIndicatorSize = TabBarIndicatorSize.label;
 const InputDecoration kInputDecoration = InputDecoration(
   hintText: 'Search...',
   contentPadding: EdgeInsets.only(left: 8, top: 8, bottom: 8),
@@ -20,3 +27,10 @@ BoxDecoration getSearchBoxDecoration(BuildContext context) {
   );
 }
 
+final customThemeData = ThemeData(
+  colorScheme: const ColorScheme.light(
+    primary: Colors.blue,
+    secondary: Colors.blueAccent,
+  ),
+  // ... Other theme data
+);

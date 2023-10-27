@@ -1,5 +1,5 @@
+// lib/views/app_bar.dart
 import 'package:flutter/material.dart';
-
 import '../config/constants.dart';
 import '../components/login_register_button.dart';
 import '../components/search_box.dart';
@@ -18,7 +18,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         backgroundColor: theme.appBarTheme.backgroundColor,
         elevation: theme.appBarTheme.elevation,
         title: const AppBarTitle(),
-        actions: const <Widget>[  // Use a list of widgets
+        actions: const <Widget>[
+          // Use a list of widgets
           AppBarActions(),
         ],
       ),
@@ -62,5 +63,3 @@ class AppBarActions extends StatelessWidget {
     );
   }
 }
-
-

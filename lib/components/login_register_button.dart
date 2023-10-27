@@ -6,7 +6,8 @@ class LoginRegisterButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).buttonTheme.colorScheme;
-    final borderColor = colorScheme?.onSurface ?? Colors.blue;  // Use a default value if colorScheme is null
+    final borderColor = colorScheme?.onSurface ??
+        Colors.blue; // Use a default value if colorScheme is null
 
     return OutlinedButton(
       onPressed: () {
@@ -14,14 +15,15 @@ class LoginRegisterButton extends StatelessWidget {
         // Use Navigator.push to navigate to another page
       },
       style: OutlinedButton.styleFrom(
-        side: BorderSide(color: borderColor),  // Use the borderColor variable
+        side: BorderSide(color: borderColor), // Use the borderColor variable
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
       ),
       child: const Text(
         'Login/Register',
-        style: TextStyle(fontSize: 12, color: Colors.blue),  // Set font size and text color
+        style: TextStyle(
+            fontSize: 12, color: Colors.blue), // Set font size and text color
       ),
     );
   }

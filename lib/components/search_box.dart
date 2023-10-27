@@ -8,13 +8,11 @@ class SearchBox extends StatelessWidget {
   Widget build(BuildContext context) {
     final BoxDecoration boxDecoration = getSearchBoxDecoration(context);
     return Container(
-      width: 200.0,  // Assume this is the desired width
+      width: 200.0, // Assume this is the desired width
       decoration: boxDecoration,
       child: TypeAheadField(
         textFieldConfiguration: const TextFieldConfiguration(
-            style: kTextStyle12,
-            decoration: kInputDecoration
-        ),
+            style: kTextStyle12, decoration: kInputDecoration),
         suggestionsCallback: (pattern) async {
           // Replace with your data fetching logic
           return ["Suggestion 1", "Suggestion 2", "Suggestion 3"];
