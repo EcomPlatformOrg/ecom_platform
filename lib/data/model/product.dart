@@ -10,15 +10,14 @@ class Product {
   final String? mainCategory;
 
   Product({
-     this.id,
-     required this.name,
-    required  this.description,
+    this.id,
+    required this.name,
+    required this.description,
     this.price,
-     this.quantity,
-     this.stockQuantity,
+    this.quantity,
+    this.stockQuantity,
     this.categoryId,
     required this.imageUrl,
-     this.mainCategory,
+    this.mainCategory,
   });
-
 }

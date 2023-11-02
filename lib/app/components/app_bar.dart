@@ -2,9 +2,9 @@
 import 'package:ecom_platform/app/widgets/search_box.dart';
 import 'package:flutter/material.dart';
 import '../../constants/constants.dart';
-import 'login_register_button.dart';
-import 'cart_button.dart';
-import 'logo.dart';
+import '../widgets/login_register_button.dart';
+import '../widgets/cart_button.dart';
+import '../widgets/logo.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key});
@@ -35,7 +35,7 @@ class AppBarTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const Row(
+    return const Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Logo(),

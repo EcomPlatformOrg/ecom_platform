@@ -11,10 +11,10 @@ class CustomFooter extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16.0),
       decoration: const BoxDecoration(
-        color: Colors.white, // 设置背景颜色为白色
+        color: Colors.white, // 背景為白色
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween, // 使内容分布在行的两端
+        mainAxisAlignment: MainAxisAlignment.spaceBetween, // 使內容分布在兩端
         children: [
           Row(
             // 社交媒体图标
@@ -50,8 +50,8 @@ class CustomFooter extends StatelessWidget {
               '© 2023 ECOM Company',
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 14.0, // 使字体变小
-                fontWeight: FontWeight.bold, // 使字体变粗
+                fontSize: 14.0, // 字體變小
+                fontWeight: FontWeight.bold, // 字體變粗
               ),
             ),
           ),

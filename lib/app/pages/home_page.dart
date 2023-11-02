@@ -1,112 +1,80 @@
 // lib/app/pages/home_page.dart
 
 import 'package:flutter/material.dart';
-import '../../data/model/product.dart';
 import '../widgets/carousel_slider.dart';
-import '../widgets/custom_footer.dart';
-import '../widgets/product_sliver_grid.dart';
-import '../widgets/tab_bar.dart';
-import '../widgets/app_bar.dart';
+import '../components/custom_footer.dart';
+import '../widgets/product/product_list.dart'; // Updated import
+import '../components/tab_bar.dart';
+import '../components/app_bar.dart';
+import '../../data/model/product.dart';
+import '../../data/repository/product_repository.dart'; // Import the product repository
 
+// 定義 HomePage 類別,繼承 StatelessWidget 表示它是一個不可變的組件
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  // 定義一個 ProductRepository 用於獲取產品資訊
+  final ProductRepository productRepository; // Dependency Injection
+
+  const HomePage({
+    Key? key,
+    required this.productRepository, // 通過構造函數接收 ProductRepository 對象
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    List<Product> products = [
-      Product(
-        name: 'Pixel 6',
-        description: 'Description 1',
-        price: 29,
-        imageUrl: 'assets/pixel6.png',
-      ),
-      Product(
-        name: 'Pixel 7',
-        description: 'Description 1',
-        price: 39,
-        imageUrl: 'assets/pixel7.png',
-      ),
-      Product(
-        name: 'Pixel 8',
-        description: 'Description 1',
-        price: 49,
-        imageUrl: 'assets/pixel8.png',
-      ),
-      Product(
-        name: 'Google watch',
-        description: 'Description 1',
-        price: 19,
-        imageUrl: 'assets/google_watch.png',
-      ),
-      Product(
-        name: 'Google Buds Pro',
-        description: 'Description 1',
-        price: 39,
-        imageUrl: 'assets/google_buds.png',
-      ),
-      Product(
-        name: 'Google Nest Audio',
-        description: 'Description 1',
-        price: 29,
-        imageUrl: 'assets/nest_audio.png',
-      ),
-    ];
-    return DefaultTabController(
-      length: 3, // The number of tabs
-      child: Scaffold(
-        appBar: const CustomAppBar(),
-        body: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-              child: Column(
-                children: [
-                  const SizedBox(
-                    height: 200,
-                    width: 800,
-                    child: Carousel(),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16.0),
-                    child: ProductTabBar(),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.only(
-                        left: 250.0, top: 16.0, bottom: 16.0),
-                    alignment: Alignment.centerLeft,
-                    child: const Text(
-                      '熱門商品',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
+    return FutureBuilder<List<Product>>(
+      // 使用 FutureBuilder 處理異步操作 異步獲取產品列表
+      future: productRepository
+          .getProducts(), // 調用 ProductRepository 的 getProducts 方法獲取產品列表
+      builder: (context, snapshot) {
+        // builder 函數構建 UI
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const CircularProgressIndicator(); // 如果在等待狀態，顯示加載指示器
+        } else if (snapshot.hasError) {
+          return Text('Error: ${snapshot.error}'); // 如果有錯誤，顯示錯誤資訊
+        } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+          return const Text('No products available'); // 如果沒有資料或資料為空，顯示無產品可用的資訊
+        } else {
+          final products = snapshot.data!; // 獲取產品列表
+          return DefaultTabController(
+            length: 3,
+            child: Scaffold(
+              appBar: const CustomAppBar(), // 設置應用欄
+              body: CustomScrollView(
+                // 使用 CustomScrollView 組織頁面內容
+                slivers: [
+                  const SliverToBoxAdapter(
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 200,
+                          width: 800,
+                          child: Carousel(), // 顯示輪播圖
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 16.0),
+                          child: ProductTabBar(), // 顯示產品標籤欄
+                        ),
+                      ],
                     ),
+                  ),
+                  ProductList(
+                    products: products,
+                    title: '熱門商品',
+                  ), // Updated to use ProductList
+                  ProductList(
+                    products: products,
+                    title: '最新商品',
+                  ), // Updated to use ProductList
+                  const SliverToBoxAdapter(
+                    child: CustomFooter(), // 顯示自定義底部
                   ),
                 ],
               ),
+              backgroundColor: const Color(0xFFF0F9FF), // 設置背景顏色
             ),
-            ProductSliverGrid(products), // Update to the new component
-            SliverToBoxAdapter(
-              child: Container(
-                padding:
-                    const EdgeInsets.only(left: 250.0, top: 16.0, bottom: 16.0),
-                alignment: Alignment.centerLeft,
-                child: const Text(
-                  '最新商品',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
-            ProductSliverGrid(products), // Update to the new component
-            const SliverToBoxAdapter(
-              child: CustomFooter(),
-            ),
-          ],
-        ),
-        backgroundColor: const Color(0xFFF0F9FF),
-      ),
+          );
+        }
+      },
     );
   }
 }
