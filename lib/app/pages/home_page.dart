@@ -1,11 +1,12 @@
-// lib/pages/home_page.dart
+// lib/app/pages/home_page.dart
+
 import 'package:flutter/material.dart';
-import '../components/carousel_slider.dart';
-import '../components/custom_footer.dart';
-import '../components/product_sliver_grid.dart';
-import '../components/tab_bar.dart';
-import '../views/app_bar.dart';
-import '../models/product.dart';
+import '../../data/model/product.dart';
+import '../widgets/carousel_slider.dart';
+import '../widgets/custom_footer.dart';
+import '../widgets/product_sliver_grid.dart';
+import '../widgets/tab_bar.dart';
+import '../widgets/app_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -14,39 +15,39 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Product> products = [
       Product(
-        title: 'Pixel 6',
+        name: 'Pixel 6',
         description: 'Description 1',
-        price: 29.99,
+        price: 29,
         imageUrl: 'assets/pixel6.png',
       ),
       Product(
-        title: 'Pixel 7',
+        name: 'Pixel 7',
         description: 'Description 1',
-        price: 39.99,
+        price: 39,
         imageUrl: 'assets/pixel7.png',
       ),
       Product(
-        title: 'Pixel 8',
+        name: 'Pixel 8',
         description: 'Description 1',
-        price: 49.99,
+        price: 49,
         imageUrl: 'assets/pixel8.png',
       ),
       Product(
-        title: 'Google watch',
+        name: 'Google watch',
         description: 'Description 1',
-        price: 19.99,
+        price: 19,
         imageUrl: 'assets/google_watch.png',
       ),
       Product(
-        title: 'Google Buds Pro',
+        name: 'Google Buds Pro',
         description: 'Description 1',
-        price: 39.99,
+        price: 39,
         imageUrl: 'assets/google_buds.png',
       ),
       Product(
-        title: 'Google Nest Audio',
+        name: 'Google Nest Audio',
         description: 'Description 1',
-        price: 29.99,
+        price: 29,
         imageUrl: 'assets/nest_audio.png',
       ),
     ];

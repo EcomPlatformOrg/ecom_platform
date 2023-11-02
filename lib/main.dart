@@ -1,6 +1,6 @@
 // lib/main.dart
-import 'package:ecom_platform/pages/home_page.dart';
-import 'styles/theme.dart';
+import 'package:ecom_platform/app/pages/home_page.dart';
+import 'constants/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {

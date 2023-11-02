@@ -1,6 +1,8 @@
+// lib/app/widgets/search_box.dart
+
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
-import '../styles/styles.dart';
+import '../../constants/styles.dart';
 
 class SearchBox extends StatelessWidget {
   const SearchBox({Key? key}) : super(key: key);

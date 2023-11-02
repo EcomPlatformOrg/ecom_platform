@@ -1,8 +1,8 @@
-// lib/components/product_sliver_grid.dart
+// lib/app/widgets/product_sliver_grid.dart
 
 import 'package:flutter/material.dart';
-import '../models/product.dart';
-import 'product_item.dart'; // Make sure you import your ProductItem component
+import '../../data/model/product.dart';
+import './product_item.dart'; // Make sure you import your ProductItem component
 
 class ProductSliverGrid extends StatelessWidget {
   final List<Product> products;

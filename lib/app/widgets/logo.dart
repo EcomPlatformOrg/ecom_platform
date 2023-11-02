@@ -1,6 +1,8 @@
+// lib/app/widgets/logo.dart
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../config/constants.dart';
+import '../../constants/constants.dart';
 
 class Logo extends StatelessWidget {
   const Logo({super.key});

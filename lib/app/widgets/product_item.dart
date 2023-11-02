@@ -1,6 +1,7 @@
-// lib/components/product_item.dart
+// lib/app/widgets/product_item.dart
+
 import 'package:flutter/material.dart';
-import '../models/product.dart';
+import '../../data/model/product.dart';
 
 class ProductItem extends StatelessWidget {
   const ProductItem(this.product, {super.key});
@@ -40,7 +41,7 @@ class ProductItem extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        product.title,
+                        product.name,
                         style: Theme.of(context).textTheme.titleSmall,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
@@ -59,7 +60,7 @@ class ProductItem extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(bottom: 8.0), // 调整价格的位置
                     child: Text(
-                      '\$${product.price.toStringAsFixed(2)}',
+                      '\$${product.price?.toStringAsFixed(2)}',
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
                             fontWeight: FontWeight.bold,
                             color: Theme.of(context).colorScheme.secondary,

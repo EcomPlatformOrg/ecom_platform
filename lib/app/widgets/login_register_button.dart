@@ -1,3 +1,4 @@
+// lib/app/widgets/login_register_button.dart
 import 'package:flutter/material.dart';
 
 class LoginRegisterButton extends StatelessWidget {
