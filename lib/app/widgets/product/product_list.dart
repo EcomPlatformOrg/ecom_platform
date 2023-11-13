@@ -1,8 +1,8 @@
 // lib/app/widgets/product/product_list.dart
 
 import 'package:ecom_platform/app/widgets/product/product_grid.dart';
+import 'package:ecom_platform/data/model/product.dart';
 import 'package:flutter/material.dart';
-import '../../../data/model/product.dart';
 
 class ProductList extends StatelessWidget {
   final List<Product> products;

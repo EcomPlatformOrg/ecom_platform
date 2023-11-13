@@ -14,7 +14,7 @@ class Logo extends StatelessWidget {
           const EdgeInsets.only(left: logoPaddingLeft, right: logoPaddingRight),
       child: SvgPicture.asset(
         'assets/Hipster_HeroLogo2.svg',
-        fit: BoxFit.contain,
+        // fit: BoxFit.contain,
         height: logoHeight,
         width: logoWidth,
       ),

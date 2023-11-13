@@ -1,31 +1,27 @@
-// lib/main.dart
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ecom_platform/app/pages/home_page.dart';
 import 'package:ecom_platform/data/repository/product_repository.dart';
-import 'package:ecom_platform/constants/theme.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:ecom_platform/bloc/product/product_bloc.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key); // Removed the const keyword
 
   @override
   Widget build(BuildContext context) {
-    return Provider<ProductRepository>(
-      create: (context) => FakeProductRepository(),
+    // Provide a ProductRepository to HomePage through MaterialApp
+    return BlocProvider(
+      create: (context) =>
+          ProductBloc(productRepository: FakeProductRepository()),
       child: MaterialApp(
-        home: Builder(
-          builder: (context) {
-            final productRepository =
-                Provider.of<ProductRepository>(context, listen: false);
-            return HomePage(productRepository: productRepository);
-          },
-        ),
-        debugShowCheckedModeBanner: false,
-        theme: customThemeData,
+        title: 'Flutter Demo',
+        home: HomePage(
+            productRepository:
+                FakeProductRepository()), // Added productRepository argument
       ),
     );
   }

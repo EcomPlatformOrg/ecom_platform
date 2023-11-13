@@ -1,3 +1,4 @@
+// lib/data/model/product.dart
 class Product {
   final String? id;
   final String name;

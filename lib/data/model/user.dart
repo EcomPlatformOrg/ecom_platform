@@ -1,3 +1,4 @@
+// lib/data/model/user.dart
 class User {
   final String id;
   final String oauthProvider;

@@ -1,6 +1,6 @@
 // lib/app/widgets/tab_bar.dart
 
-import '../../constants/styles.dart';
+import 'package:ecom_platform/constants/styles.dart';
 import 'package:flutter/material.dart';
 
 class ProductTabBar extends StatelessWidget implements PreferredSizeWidget {
